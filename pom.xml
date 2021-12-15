@@ -24,6 +24,7 @@
 		<!-- JBoss dependency versions -->
 
 		<version.wildfly.maven.plugin>2.0.0.Final</version.wildfly.maven.plugin>
+		<version.wildfly>21.0.1.Final</version.wildfly>
 
 		<!-- Define the version of the JBoss BOMs we want to import to specify 
 			tested stacks. -->
@@ -35,6 +36,8 @@
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		
+		<version.server.bom>${version.wildfly}</version.server.bom>
 	</properties>
 
 	<dependencyManagement>
@@ -94,9 +97,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		<groupId>org.eclipse.microprofile.opentracing
+			<groupId>org.eclipse.microprofile.opentracing
 		</groupId>
-		<artifactId>
+			<artifactId>
 		microprofile-opentracing-api
 		</artifactId>
 		</dependency>
@@ -128,11 +131,38 @@
 			</plugin>
 
 			<!-- The WildFly plugin deploys your war to a local JBoss AS container -->
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>${version.wildfly.maven.plugin}</version>
 			</plugin>
+
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-jar-maven-plugin</artifactId>
+				<version>3.0.0.Beta1</version>
+				<configuration>
+					<feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#${version.server.bom}</feature-pack-location>
+					<layers>
+						<layer>jaxrs</layer>
+						<layer>management</layer>
+					</layers>
+					<excluded-layers>
+						<layer>deployment-scanner</layer>
+					</excluded-layers>
+					<plugin-options>
+						<jboss-fork-embedded>true</jboss-fork-embedded>
+					</plugin-options>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>package</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+
 		</plugins>
 	</build>
 </project>
