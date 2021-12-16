@@ -1,2 +1,2 @@
-# eap74-observability-demo
-Code to demonstrate the Observability features in EAP 7.4
+# eap74-demo
+This repo holds sample code and implementation steps and tools to demonstrate the latest features of EAP 7.4 
