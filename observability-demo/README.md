@@ -74,15 +74,21 @@ Add Prometheus as datasource
 
 Create new dashboard and add new panel and then add the metric that you want to be visualized that is exported from prometheus.
 
+Demo dashboard
+A sample grafana dashboard for the observability demo is here : https://github.com/summu1985/eap74-demo/blob/main/observability-demo/EAP%207.4%20Observability%20demo-1639595534945.json.
+
+Import it and customize it to your needs.
+
 7. Apache JMeter
 
 Download jmeter from : https://jmeter.apache.org/download_jmeter.cgi
+
 Import the JMeter config file for running 100 threads for infinite time : https://github.com/summu1985/eap74-observability-demo/blob/main/Observality_demo_threadgroup.jmx
 
-Demo dashboard
+Open the config file and modify the thread count / delay / Web service endpoints as per your setup and convenience and then start Jmeter run. The threads run in a continuous loop and to stop the threads, you can stop the Jmeter run from the JMeter UI.
 
 
-Live reload demo
+# Live reload demo
 
 Add the wildfly bootable jar maven plugin.
 
