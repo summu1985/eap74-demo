@@ -34,8 +34,11 @@ Let’s define this new tracer as the default tracer to be used by WildFly:
 
 3. Deploy the application
 git clone https://github.com/summu1985/eap74-demo.git
+
 cd eap74-demo/observality-demo
+
 mvn clean install
+
 cp target/eap-observability-demo.war.war $EAP_HOME/standalone/deployments
 
 $EAP_HOME/bin/standalone.sh -c standalone-microprofile.xml
