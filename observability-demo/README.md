@@ -67,6 +67,14 @@ The metrics can be retrieved from the microprofile metrics endpoint - http://loc
 6. Grafana
 
 Download grafana from : https://grafana.com/grafana/download?platform=mac
+
+Extract grafana and execute the grafana-server
+
+$ cd grafana/bin
+
+$ ./grafana-server
+
+
 Grafana UI is accessible : http://localhost:3000
 Default username / password = admin/admin
 
